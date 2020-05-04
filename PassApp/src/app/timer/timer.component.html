@@ -1,0 +1,8 @@
+<div class="timer-container">
+    <div class="timer-content">{{seconds > 0 ? seconds : 0}}</div>
+    <mat-progress-spinner color="primary"
+                          mode="determinate"
+                          diameter="50"
+                          [value]="(100 / 30) * seconds">
+    </mat-progress-spinner>
+</div>

@@ -1,0 +1,20 @@
+<div class="validation-area">
+    <form [formGroup]="validateForm">
+        <mat-form-field class="full-width">
+            <mat-label>One-Time Password</mat-label>
+            <input matInput
+                   placeholder="ex: 1234"
+                   formControlName="otp"
+                   [value]="otp"
+                   required>
+        </mat-form-field>
+
+        <button mat-stroked-button
+                color="primary"
+                [disabled]="validateFormDisabled"
+                class="validate-password-button"
+                (click)="validateOtp()">
+            Validate Password
+        </button>
+    </form>
+</div>

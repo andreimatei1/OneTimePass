@@ -1,0 +1,27 @@
+<div class="otp-container">
+    <form [formGroup]="passForm">
+        <mat-form-field>
+            <mat-label>User Id</mat-label>
+            <input matInput
+                   placeholder="ex: 1234"
+                   formControlName="userId"
+                   required>
+        </mat-form-field>
+
+        <button mat-stroked-button
+                color="primary"
+                class="generate-password-button"
+                [disabled]="passFormDisabled"
+                (click)="generateOneTimePass()">
+            Generate One-Time Password
+        </button>
+    </form>
+</div>
+
+<div class="timer-area">
+    <mat-label>Seconds remaining:</mat-label>
+    <app-timer [seconds]="totalSeconds"></app-timer>
+</div>
+<app-validate-otp [userId]="passForm.value.userId"
+                  [otp]="pass">
+</app-validate-otp>
